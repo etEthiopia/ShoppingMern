@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Dagi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add global create-react-app
+  C:\Program Files\nodejs\node.exe C:\Users\Dagi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add reactstrap uuid react-transition-group
 
 PATH: 
   C:\Program Files\Python36\Scripts\;C:\Program Files\Git\cmd;C:\Program Files\Common Files\Autodesk Shared\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\xampp\php;C:\composer;C:\Program Files (x86)\Python36-32\;C:\PyCharm Edu 2018.1.1\python;C:\Program Files\Python36\;C:\Program Files (x86)\Python36-32\Scripts;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Java\jdk1.8.0_141\bin;;C:\TDM-GCC-64\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Dart\dart-sdk\bin;C:\Program Files\nodejs\;C:\Go\bin;C:\Python27\Scripts;C:\Program Files\Microsoft VS Code\bin;C:\Users\Dagi\AppData\Local\Microsoft\WindowsApps;C:\Users\Dagi\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Python36\Scripts;c:\maven\\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1.1\bin;;C:\Users\Dagi\AppData\Roaming\npm;C:\Users\Dagi\go\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: connect ECONNREFUSED 104.16.20.35:443
+  Error: connect ECONNREFUSED 104.16.23.35:443
       at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1128:14)
 
 npm manifest: 
@@ -24,8 +24,11 @@ npm manifest:
     "description": "Shopping List",
     "main": "server.js",
     "scripts": {
+      "client-install": "npm install --prefix pharma",
       "start": "node server.js",
-      "server": "nodemon server.js"
+      "server": "nodemon server.js",
+      "client": "npm start --prefix pharma",
+      "dev": "concurrently \"npm run server\" \"npm run client\""
     },
     "author": "Dagmawi",
     "license": "ISC",
