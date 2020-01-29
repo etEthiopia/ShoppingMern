@@ -1,0 +1,55 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Dagi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add reactstrap uuid react-transition-group
+
+PATH: 
+  C:\Program Files\Python36\Scripts\;C:\Program Files\Git\cmd;C:\Program Files\Common Files\Autodesk Shared\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\xampp\php;C:\composer;C:\Program Files (x86)\Python36-32\;C:\PyCharm Edu 2018.1.1\python;C:\Program Files\Python36\;C:\Program Files (x86)\Python36-32\Scripts;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Java\jdk1.8.0_141\bin;;C:\TDM-GCC-64\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Dart\dart-sdk\bin;C:\Program Files\nodejs\;C:\Go\bin;C:\Python27\Scripts;C:\Program Files\Microsoft VS Code\bin;C:\Users\Dagi\AppData\Local\Microsoft\WindowsApps;C:\Users\Dagi\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Python36\Scripts;c:\maven\\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1.1\bin;;C:\Users\Dagi\AppData\Roaming\npm;C:\Users\Dagi\go\bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ECONNREFUSED 104.16.16.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1128:14)
+
+npm manifest: 
+  {
+    "name": "pharma",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "react": "^16.12.0",
+      "react-dom": "^16.12.0",
+      "react-scripts": "3.3.0"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+    },
+    "proxy": "http://localhost:5000",
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
