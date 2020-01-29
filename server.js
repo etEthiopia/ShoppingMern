@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+//Import Routes
+const items = require('./routes/api/items');
+
 const app = express();
 
 // Bodyparser Middleware
@@ -21,6 +24,10 @@ try {
 } catch (err) {
     console.log("DB Error : " + err);
 }
+
+
+// Configure Routes
+app.use('./api/items/', items);
 
 const port = process.env.PORT || 5000;
 
