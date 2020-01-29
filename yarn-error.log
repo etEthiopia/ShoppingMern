@@ -1,0 +1,37 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Dagi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add express body-parser mongoose concurrently
+
+PATH: 
+  C:\Program Files\Python36\Scripts\;C:\Program Files\Git\cmd;C:\Program Files\Common Files\Autodesk Shared\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\xampp\php;C:\composer;C:\Program Files (x86)\Python36-32\;C:\PyCharm Edu 2018.1.1\python;C:\Program Files\Python36\;C:\Program Files (x86)\Python36-32\Scripts;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Java\jdk1.8.0_141\bin;;C:\TDM-GCC-64\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Dart\dart-sdk\bin;C:\Program Files\nodejs\;C:\Go\bin;C:\Python27\Scripts;C:\Program Files\Microsoft VS Code\bin;C:\Users\Dagi\AppData\Local\Microsoft\WindowsApps;C:\Users\Dagi\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Python36\Scripts;c:\maven\\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1.1\bin;;C:\Users\Dagi\AppData\Roaming\npm;C:\Users\Dagi\go\bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+
+npm manifest: 
+  {
+    "name": "shoppingapi",
+    "version": "1.0.0",
+    "description": "Shopping List",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Dagmawi",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
