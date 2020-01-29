@@ -4,8 +4,11 @@
   "description": "Shopping List",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix pharma",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix pharma",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Dagmawi",
   "license": "ISC",
