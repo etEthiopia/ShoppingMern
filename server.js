@@ -8,11 +8,20 @@ const app = express();
 app.use(bodyParser.json());
 
 // DB Config
-mongoose.connect(
-        process.env.DB_CONNECTION, {
+try {
+    mongoose.connect(
+        process.env.DB_CONNECTION + "", {
             useNewUrlParser: true,
             useCreateIndex: true
-        }).then(() => console.log("Database Connected"))
-    .catch(err => console.log("DB Error : " + err))
+        },
+        () => {
+            console.log("Connected to the Databse");
+        }
+    );
+} catch (err) {
+    console.log("DB Error : " + err);
+}
 
-const port = process.env.
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log("Server has Started"));
