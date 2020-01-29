@@ -1,4 +1,4 @@
 node_modules
-./pharma/node_modules
 .env
 route.rest
+./client/node_modules
