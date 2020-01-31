@@ -8,7 +8,11 @@ const Item = require("../../models/Item");
 // @access Public
 router.get("/", async (req, res) => {
     await Item.find()
+        .sort({
+            date: -1
+        })
         .then(items => res.json(items))
+
         .catch(err => res.json({
             Error: err,
             success: false

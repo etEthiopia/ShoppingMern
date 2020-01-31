@@ -6,7 +6,7 @@ POST http://localhost:5000/items/
 Content-Type: application/json
 
 {
-    "name": "Bottled Water"
+    "name": "Coffee Beans"
 }
 
 ###
