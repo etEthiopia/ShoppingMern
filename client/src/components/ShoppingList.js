@@ -41,9 +41,7 @@ class ShoppingList extends Component {
                     }}
                     size="sm"
                     variant="danger"
-                    onClick={
-                      this.onDelete.bind(this, id)
-                    }
+                    onClick={this.onDelete.bind(this, id)}
                   >
                     &times;
                   </Button>
