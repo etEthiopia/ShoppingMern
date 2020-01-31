@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Button, Form, FormGroup } from "react-bootstrap";
+import { Button, Form} from "react-bootstrap";
 import { Modal, ModalBody, ModalHeader, Label, Input } from "reactstrap";
 import uuid from "uuid";
 import { connect } from "react-redux";
