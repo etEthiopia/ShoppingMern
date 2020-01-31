@@ -10,13 +10,15 @@ import axios from "axios";
 export const getItems = () => dispatch => {
     dispatch(setItemsLoading());
     axios.get('/items/')
-        .then(res =>
+        .then(res => {
+            var json = JSON.parse(JSON.stringify(res.data).split('"_id":').join('"id":'));
             dispatch({
                 type: GET_ITEMS,
-                payload: res.data
+                payload: json
             })
-        )
-};
+        })
+}
+
 
 export const addItem = item => dispatch => {
     dispatch(setItemsLoading());
@@ -36,12 +38,7 @@ export const deleteItem = id => {
     };
 };
 
-// export const addItem = item => {
-//     return {
-//         type: ADD_ITEM,
-//         payload: item
-//     };
-// };
+
 
 export const setItemsLoading = () => {
     return {
