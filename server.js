@@ -15,8 +15,7 @@ app.use(bodyParser.json());
 // DB Config
 try {
   mongoose.connect(
-    process.env.DB_CONNECTION,
-    {
+    process.env.DB_CONNECTION, {
       useNewUrlParser: true,
       useCreateIndex: true
     },

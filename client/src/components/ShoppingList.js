@@ -22,6 +22,7 @@ class ShoppingList extends Component {
       <Container>
         <ListGroup>
           <TransitionGroup className="shopping-list">
+            {/* {console.log(items)} */}
             {items.map(({ id, name }) => (
               <CSSTransition key={id} timeout={500} classNames="fade">
                 <ListGroupItem>
