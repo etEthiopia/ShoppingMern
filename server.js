@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const path = require('path');
 //Import Routes
 const items = require("./routes/api/items");
+const users = require("./routes/api/users");
 
 const app = express();
 
@@ -29,6 +30,7 @@ try {
 
 // Configure Routes
 app.use("/items/", items);
+app.use("/users/", users);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
