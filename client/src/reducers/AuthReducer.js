@@ -42,6 +42,7 @@ export default function (state = initialState, action) {
         case REGISTER_FAIL:
         case LOGOUT_SUCCESS:
         case LOGIN_SUCCESS:
+            localStorage.removeItem('shopingtoken');
             return {
                 ...state,
                 token: null,
