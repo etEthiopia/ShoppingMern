@@ -5,6 +5,7 @@ import ShoppingList from "./components/ShoppingList";
 import ItemModal from "./components/ItemModal";
 import { Provider } from "react-redux";
 import store from "./store";
+import { loadUser } from "./actions/authActions";
 import { Container } from "react-bootstrap";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
@@ -13,6 +14,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {};
+  }
+
+  componentDidMount() {
+    store.dispatch(loadUser());
   }
 
   render() {

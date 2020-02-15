@@ -8,5 +8,5 @@ import AuthReducer from './AuthReducer';
 export default combineReducers({
     item: ItemReducer,
     error: ErrorReducer,
-    Auth: AuthReducer
+    auth: AuthReducer
 });

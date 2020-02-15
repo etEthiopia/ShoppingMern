@@ -25,16 +25,8 @@ export const loadUser = () => (dispatch, getState) => {
         type: USER_LOADING
     });
 
-    config = {
-        'xauthtoken': null
-    }
 
-    // Get token from localstorage
-    const token = getState().auth.token;
-    if (token) {
-        config.xauthtoken = token;
-    }
-    axios.get('/auth/user', config)
+    axios.get('/auth/user', tokenConfig(getState))
         .then(res => dispatch({
             type: USER_LOADED,
             payload: res.data
@@ -45,4 +37,19 @@ export const loadUser = () => (dispatch, getState) => {
                 type: AUTH_ERROR
             })
         })
+}
+
+// Setup Config
+export const tokenConfig = getState => {
+    const config = {
+        'xauthtoken': null
+    }
+
+    // Get token from localstorage
+    const token = getState().auth.token;
+    if (token) {
+        config.xauthtoken = token;
+    }
+
+    return config;
 }
