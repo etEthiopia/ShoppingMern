@@ -6,6 +6,7 @@ function auth(req, res, next) {
 
     // Check for token
     if (!token) {
+        console.log("NO TOKEN ")
         res.status(401).json({
             success: false,
             message: 'No Token, Unauthorized Access'
@@ -16,7 +17,6 @@ function auth(req, res, next) {
             const decoded = jwt.verify(token, config.get('JWTSECRET'));
 
             // Add user from payload
-
             req.user = decoded;
             next();
         } catch (err) {
