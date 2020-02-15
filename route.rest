@@ -20,7 +20,9 @@ POST http://localhost:5000/users/
 Content-Type: application/json
 
 {
-    "name": "Ray Donvan",
-    "email": "raydonvan@gmail.com",
+    "name": "Mickey Donvan",
+    "email": "mickeydonvan@gmail.com",
     "password": "password"
 }
+
+
