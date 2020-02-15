@@ -26,3 +26,14 @@ Content-Type: application/json
 }
 
 
+###
+
+POST http://localhost:5000/auth/
+Content-Type: application/json
+
+{
+    "email": "mickeydonvan@gmail.com",
+    "password": "password"
+}
+
+

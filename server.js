@@ -10,6 +10,7 @@ const config = require('config')
 //Import Routes
 const items = require("./routes/api/items");
 const users = require("./routes/api/users");
+const auth = require("./routes/api/auth");
 
 const app = express();
 
@@ -37,6 +38,7 @@ try {
 // Configure Routes
 app.use("/items/", items);
 app.use("/users/", users);
+app.use("/auth/", auth);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
