@@ -1,0 +1,4 @@
+{
+    "DB_CONNECTION" : "mongodb://localhost/ShoppingDB",
+    "JWTSECRET" : "shoppingJwtSecret"
+}

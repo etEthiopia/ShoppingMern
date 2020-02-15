@@ -4,6 +4,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require('path');
+
+//Import default json
+const config = require('config')
+
 //Import Routes
 const items = require("./routes/api/items");
 const users = require("./routes/api/users");
@@ -14,9 +18,12 @@ const app = express();
 app.use(express.json());
 
 // DB Config
+
+const db = config.get('DB_CONNECTION');
+
 try {
   mongoose.connect(
-    process.env.DB_CONNECTION, {
+    db, {
       useNewUrlParser: true,
       useCreateIndex: true
     },
