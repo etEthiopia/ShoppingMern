@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Button, Form} from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Modal, ModalBody, ModalHeader, Label, Input } from "reactstrap";
 import uuid from "uuid";
 import { connect } from "react-redux";
@@ -52,20 +52,20 @@ class ItemModal extends Component {
           }}
           onClick={this.toggle}
         >
-          Add Item{" "}
-        </Button>{" "}
+          Add Item
+        </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}> Add To Shopping List </ModalHeader>{" "}
+          <ModalHeader toggle={this.toggle}> Add To Shopping List </ModalHeader>
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
-              <Label for="item"> Item </Label>{" "}
+              <Label for="item"> Item </Label>
               <Input
                 type="text"
                 name="name"
                 id="item"
                 placeholder="Add shopping Item"
                 onChange={this.onChange}
-              />{" "}
+              />
               <Button
                 type="submit"
                 style={{
@@ -73,11 +73,11 @@ class ItemModal extends Component {
                   float: "right"
                 }}
               >
-                Add Item{" "}
-              </Button>{" "}
-            </Form>{" "}
-          </ModalBody>{" "}
-        </Modal>{" "}
+                Add Item
+              </Button>
+            </Form>
+          </ModalBody>
+        </Modal>
       </div>
     );
   }
@@ -87,4 +87,6 @@ const mapStateToProps = state => ({
   item: state.item
 });
 
-export default connect(mapStateToProps, { addItem })(ItemModal);
+export default connect(mapStateToProps, {
+  addItem
+})(ItemModal);

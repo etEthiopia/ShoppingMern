@@ -25,8 +25,8 @@ class App extends Component {
               <ItemModal />
               <ShoppingList />
             </Container>
-          </div>{" "}
-        </div>{" "}
+          </div>
+        </div>
       </Provider>
     );
   }
