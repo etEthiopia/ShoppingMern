@@ -6,7 +6,9 @@ POST http://localhost:5000/items/
 Content-Type: application/json
 
 {
-    "name": "Coffee Beans"
+    "xauthtoken" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNDdmMmY4MmE1ZDJiNDdkODZ
+    kMGE3MCIsImlhdCI6MTU4MTc3NTM1OCwiZXhwIjoxNTgxNzc4OTU4fQ.uTeu3SyxJkpF6dJphgLkD6h2DVHVRpq2BAzyrXNn730",
+    "name": "Credit"
 }
 
 ###
