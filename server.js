@@ -11,7 +11,7 @@ const users = require("./routes/api/users");
 const app = express();
 
 // Bodyparser Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 // DB Config
 try {

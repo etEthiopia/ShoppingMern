@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const bcrypt = require('bcryptjs');
 
 // User Model
 const User = require("../../models/User");
@@ -7,13 +8,61 @@ const User = require("../../models/User");
 // @desc GET All Users
 // @access Public
 router.post("/", async (req, res) => {
-    await User.find()
-        .then(users => res.send('register'))
+    const {
+        name,
+        email,
+        password
+    } = req.body;
 
+    // Simple Validation
+    if (!name || !email || !password) {
+        res.status(400).json({
+            success: false,
+            message: 'All fields are not available.'
+        })
+    }
+
+    await User.findOne({
+            email
+        })
+        .then(user => {
+            if (user) {
+                res.status(400).json({
+                    success: false,
+                    message: 'A user is already registered with that email.'
+                })
+            } else {
+                const newUser = new User({
+                    name,
+                    email,
+                    password
+                })
+
+                // Create salt & hash
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(newUser.password, salt, (err, hash) => {
+                        if (err) throw err;
+                        newUser.password = hash;
+                        newUser.save()
+                            .then(user => {
+                                res.json({
+                                    user: {
+                                        id: user.id,
+                                        name: user.name,
+                                        email: user.email
+                                    }
+                                })
+                            })
+                    })
+                })
+            }
+        })
         .catch(err => res.json({
             Error: err,
             success: false
         }))
+
+    
 });
 
 // // @Route POST api/users
