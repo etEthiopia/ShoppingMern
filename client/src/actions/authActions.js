@@ -70,6 +70,23 @@ export const register = (user) => dispatch => {
 
 }
 
+// Login User
+export const login = (user) => dispatch => {
+    axios.post('/auth', user)
+        .then(res => dispatch({
+            type: LOGIN_SUCCESS,
+            payload: res.data
+        }))
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL'));
+            dispatch({
+                type: LOGIN_FAIL
+            })
+        })
+
+}
+
+
 export const logout = () => {
     return {
         type: LOGOUT_SUCCESS
