@@ -53,7 +53,7 @@ class RegisterModal extends Component {
           Register
         </NavLink>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}> Add To Shopping List </ModalHeader>{" "}
+          <ModalHeader toggle={this.toggle}> Register </ModalHeader>{" "}
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <Label for="name"> Name </Label>{" "}
@@ -62,6 +62,7 @@ class RegisterModal extends Component {
                 name="name"
                 id="name"
                 placeholder="Enter Full Name."
+                className="mb-3"
                 onChange={this.onChange}
               />{" "}
               <Label for="email"> Email </Label>{" "}
@@ -70,6 +71,7 @@ class RegisterModal extends Component {
                 name="email"
                 id="email"
                 placeholder="Enter Email Address."
+                className="mb-3"
                 onChange={this.onChange}
               />{" "}
               <Label for="password"> Password </Label>{" "}
@@ -78,13 +80,16 @@ class RegisterModal extends Component {
                 name="password"
                 id="password"
                 placeholder="Enter Password."
+                className="mb-3"
                 onChange={this.onChange}
               />{" "}
+              <Label for="cpassword"> Confrim Password </Label>{" "}
               <Input
                 type="cpassword"
                 name="cpassword"
                 id="cpassword"
                 placeholder="Re-Enter Password."
+                className="mb-3"
                 onChange={this.onChange}
               />{" "}
               <Button
@@ -94,7 +99,7 @@ class RegisterModal extends Component {
                   float: "right"
                 }}
               >
-                Add Register{" "}
+                Sign Up{" "}
               </Button>{" "}
             </Form>{" "}
           </ModalBody>{" "}
