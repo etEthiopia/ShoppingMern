@@ -10,6 +10,7 @@ import {
   NavLink,
   Container
 } from "reactstrap";
+import RegisterModal from "./auth/RegisterModal";
 
 class AppNavbar extends Component {
   constructor(props) {
@@ -30,17 +31,17 @@ class AppNavbar extends Component {
       <div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
           <Container>
-            <NavbarBrand href="/"> Shopping </NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
+            <NavbarBrand href="/"> Shopping </NavbarBrand>{" "}
+            <NavbarToggler onClick={this.toggle} />{" "}
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="http://github.com/etEthiopia">Github</NavLink>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Container>
-        </Navbar>
+                  <RegisterModal />
+                </NavItem>{" "}
+              </Nav>{" "}
+            </Collapse>{" "}
+          </Container>{" "}
+        </Navbar>{" "}
       </div>
     );
   }
