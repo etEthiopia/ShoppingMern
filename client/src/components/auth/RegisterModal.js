@@ -1,6 +1,11 @@
-import React, { Component } from "react";
+import React, {
+  Component
+} from "react";
 
-import { Button, Form } from "react-bootstrap";
+import {
+  Button,
+  Form
+} from "react-bootstrap";
 import {
   Modal,
   ModalBody,
@@ -10,9 +15,15 @@ import {
   NavLink,
   Alert
 } from "reactstrap";
-import { register } from "../../actions/authActions";
-import { clearErrors } from "../../actions/errorActions";
-import { connect } from "react-redux";
+import {
+  register
+} from "../../actions/authActions";
+import {
+  clearErrors
+} from "../../actions/errorActions";
+import {
+  connect
+} from "react-redux";
 import PropTypes from "prop-types";
 class RegisterModal extends Component {
   constructor(props) {
@@ -31,13 +42,26 @@ class RegisterModal extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { error } = this.props;
+    const {
+      error,
+      isAuthenticated
+    } = this.props;
     if (error !== prevProps.error) {
       // Check for the register error by id
       if (error.id === "REGISTER_FAIL") {
-        this.setState({ message: error.message.message });
+        this.setState({
+          message: error.message.message
+        });
       } else {
-        this.setState({ message: null });
+        this.setState({
+          message: null
+        });
+      }
+    }
+    // If Authenticated Close Modal
+    if (this.state.modal) {
+      if (isAuthenticated) {
+        this.toggle();
       }
     }
   }
@@ -77,67 +101,99 @@ class RegisterModal extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <NavLink onClick={this.toggle} href="#">
-          Register
-        </NavLink>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}> Register </ModalHeader>{" "}
-          <ModalBody>
-            {this.state.message ? (
-              <Alert color="danger">{this.state.message}</Alert>
-            ) : null}
-            <Form onSubmit={this.onSubmit}>
-              <Label for="name"> Name </Label>{" "}
-              <Input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter Full Name."
-                className="mb-3"
-                onChange={this.onChange}
-              />{" "}
-              <Label for="email"> Email </Label>{" "}
-              <Input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter Email Address."
-                className="mb-3"
-                onChange={this.onChange}
-              />{" "}
-              <Label for="password"> Password </Label>{" "}
-              <Input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Enter Password."
-                className="mb-3"
-                onChange={this.onChange}
-              />{" "}
-              <Label for="cpassword"> Confrim Password </Label>{" "}
-              <Input
-                type="password"
-                name="cpassword"
-                id="cpassword"
-                placeholder="Re-Enter Password."
-                className="mb-3"
-                onChange={this.onChange}
-              />{" "}
-              <Button
-                type="submit"
-                style={{
-                  marginTop: "2rem",
-                  float: "right"
-                }}
-              >
-                Sign Up{" "}
-              </Button>{" "}
-            </Form>{" "}
-          </ModalBody>{" "}
-        </Modal>{" "}
-      </div>
+    return ( <
+      div >
+      <
+      NavLink onClick = {
+        this.toggle
+      }
+      href = "#" >
+      Register <
+      /NavLink> <
+      Modal isOpen = {
+        this.state.modal
+      }
+      toggle = {
+        this.toggle
+      } >
+      <
+      ModalHeader toggle = {
+        this.toggle
+      } > Register < /ModalHeader>{" "} <
+      ModalBody > {
+        this.state.message ? ( <
+          Alert color = "danger" > {
+            this.state.message
+          } < /Alert>
+        ) : null
+      } <
+      Form onSubmit = {
+        this.onSubmit
+      } >
+      <
+      Label
+      for = "name" > Name < /Label>{" "} <
+      Input type = "text"
+      name = "name"
+      id = "name"
+      placeholder = "Enter Full Name."
+      className = "mb-3"
+      onChange = {
+        this.onChange
+      }
+      />{" "} <
+      Label
+      for = "email" > Email < /Label>{" "} <
+      Input type = "email"
+      name = "email"
+      id = "email"
+      placeholder = "Enter Email Address."
+      className = "mb-3"
+      onChange = {
+        this.onChange
+      }
+      />{" "} <
+      Label
+      for = "password" > Password < /Label>{" "} <
+      Input type = "password"
+      name = "password"
+      id = "password"
+      placeholder = "Enter Password."
+      className = "mb-3"
+      onChange = {
+        this.onChange
+      }
+      />{" "} <
+      Label
+      for = "cpassword" > Confrim Password < /Label>{" "} <
+      Input type = "password"
+      name = "cpassword"
+      id = "cpassword"
+      placeholder = "Re-Enter Password."
+      className = "mb-3"
+      onChange = {
+        this.onChange
+      }
+      />{" "} <
+      Button type = "submit"
+      style = {
+        {
+          marginTop: "2rem",
+          float: "right"
+        }
+      } >
+      Sign Up {
+        " "
+      } <
+      /Button>{" "} < /
+      Form > {
+        " "
+      } <
+      /ModalBody>{" "} < /
+      Modal > {
+        " "
+      } <
+      /div>
     );
   }
 }
@@ -154,6 +210,9 @@ const mapStateToProps = state => ({
   error: state.error
 });
 
-export default connect(mapStateToProps, { register, clearErrors })(
+export default connect(mapStateToProps, {
+  register,
+  clearErrors
+})(
   RegisterModal
 );
