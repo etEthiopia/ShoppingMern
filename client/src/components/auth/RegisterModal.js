@@ -9,7 +9,7 @@ import {
   Input,
   NavLink
 } from "reactstrap";
-import uuid from "uuid";
+import { register } from '../../actions/authActions';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 class RegisterModal extends Component {
@@ -111,6 +111,7 @@ class RegisterModal extends Component {
 
 RegisterModal.propTypes = {
   isAuthenticated: PropTypes.bool,
+  register: PropTypes.func.isRequired,
   error: PropTypes.object.isRequired
 };
 
@@ -119,4 +120,4 @@ const mapStateToProps = state => ({
   error: state.error
 });
 
-export default connect(mapStateToProps, {})(RegisterModal);
+export default connect(mapStateToProps, {register})(RegisterModal);
