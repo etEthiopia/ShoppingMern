@@ -7,9 +7,10 @@ import {
   ModalHeader,
   Label,
   Input,
-  NavLink
+  NavLink,
+  Alert
 } from "reactstrap";
-import { register } from '../../actions/authActions';
+import { register } from "../../actions/authActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 class RegisterModal extends Component {
@@ -28,6 +29,18 @@ class RegisterModal extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    const { error } = this.props;
+    if (error !== prevProps.error) {
+      // Check for the register error by id
+      if (error.id === "REGISTER_FAIL") {
+        this.setState({ message: error.message.message });
+      } else {
+        this.setState({ message: null });
+      }
+    }
+  }
+
   toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal
@@ -43,7 +56,22 @@ class RegisterModal extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    this.toggle();
+    if (this.state.cpassword == this.state.password) {
+      const newUser = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password
+      };
+
+      // Attempt to register
+      this.props.register(newUser);
+    } else {
+      this.setState({
+        message: "Password doesn't match"
+      });
+    }
+
+    //this.toggle();
   };
 
   render() {
@@ -55,6 +83,9 @@ class RegisterModal extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}> Register </ModalHeader>{" "}
           <ModalBody>
+            {this.state.message ? (
+              <Alert color="danger">{this.state.message}</Alert>
+            ) : null}
             <Form onSubmit={this.onSubmit}>
               <Label for="name"> Name </Label>{" "}
               <Input
@@ -85,7 +116,7 @@ class RegisterModal extends Component {
               />{" "}
               <Label for="cpassword"> Confrim Password </Label>{" "}
               <Input
-                type="cpassword"
+                type="password"
                 name="cpassword"
                 id="cpassword"
                 placeholder="Re-Enter Password."
@@ -120,4 +151,4 @@ const mapStateToProps = state => ({
   error: state.error
 });
 
-export default connect(mapStateToProps, {register})(RegisterModal);
+export default connect(mapStateToProps, { register })(RegisterModal);
