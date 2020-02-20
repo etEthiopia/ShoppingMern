@@ -36,22 +36,22 @@ class AppNavbar extends Component {
       <Fragment>
         <NavItem>
           <span className="navbar-text mr-3">
-            <strong> {user ? `Welcome ${user.name}` : ""} </strong>{" "}
-          </span>{" "}
-        </NavItem>{" "}
+            <strong> {user ? `Welcome ${user.name}` : ""} </strong>
+          </span>
+        </NavItem>
         <NavItem>
           <Logout />
-        </NavItem>{" "}
+        </NavItem>
       </Fragment>
     );
     const guestLinks = (
       <Fragment>
         <NavItem>
           <RegisterModal />
-        </NavItem>{" "}
+        </NavItem>
         <NavItem>
           <LoginModal />
-        </NavItem>{" "}
+        </NavItem>
       </Fragment>
     );
 
@@ -59,16 +59,15 @@ class AppNavbar extends Component {
       <div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
           <Container>
-            <NavbarBrand href="/">Shopping</NavbarBrand>{" "}
-            <NavbarToggler onClick={this.toggle} />{" "}
+            <NavbarBrand href="/">Shopping</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                {" "}
-                {isAuthenticated ? authLinks : guestLinks}{" "}
-              </Nav>{" "}
-            </Collapse>{" "}
-          </Container>{" "}
-        </Navbar>{" "}
+                {isAuthenticated ? authLinks : guestLinks}
+              </Nav>
+            </Collapse>
+          </Container>
+        </Navbar>
       </div>
     );
   }

@@ -12,7 +12,6 @@ class ShoppingList extends Component {
   }
 
   onDelete = id => {
-    
     this.props.deleteItem(id);
   };
 
@@ -26,16 +25,20 @@ class ShoppingList extends Component {
             {items.map(({ id, name }) => (
               <CSSTransition key={id} timeout={500} classNames="fade">
                 <ListGroupItem>
-                  <Button
-                    style={{
-                      marginRight: "1rem"
-                    }}
-                    size="sm"
-                    variant="danger"
-                    onClick={this.onDelete.bind(this, id)}
-                  >
-                    &times;
-                  </Button>
+                  {this.props.isAuthenticated ? (
+                    <Button
+                      style={{
+                        marginRight: "1rem"
+                      }}
+                      size="sm"
+                      variant="danger"
+                      onClick={this.onDelete.bind(this, id)}
+                    >
+                      &times;
+                    </Button>
+                  ) : (
+                    ""
+                  )}
                   {name}
                 </ListGroupItem>
               </CSSTransition>
@@ -49,11 +52,13 @@ class ShoppingList extends Component {
 
 ShoppingList.propTypes = {
   getItems: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired,
+  isAuthenticated: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
-  item: state.item
+  item: state.item,
+  isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps, {

@@ -90,17 +90,17 @@ class RegisterModal extends Component {
     return (
       <div>
         <NavLink onClick={this.toggle} href="#">
-          Register{" "}
-        </NavLink>{" "}
+          Register
+        </NavLink>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}> Register </ModalHeader>{" "}
+          <ModalHeader toggle={this.toggle}> Register </ModalHeader>
           <ModalBody>
-            {" "}
+            
             {this.state.message ? (
               <Alert color="danger"> {this.state.message} </Alert>
-            ) : null}{" "}
+            ) : null}
             <Form onSubmit={this.onSubmit}>
-              <Label for="name"> Name </Label>{" "}
+              <Label for="name"> Name </Label>
               <Input
                 type="text"
                 name="name"
@@ -108,8 +108,8 @@ class RegisterModal extends Component {
                 placeholder="Enter Full Name."
                 className="mb-3"
                 onChange={this.onChange}
-              />{" "}
-              <Label for="email"> Email </Label>{" "}
+              />
+              <Label for="email"> Email </Label>
               <Input
                 type="email"
                 name="email"
@@ -117,8 +117,8 @@ class RegisterModal extends Component {
                 placeholder="Enter Email Address."
                 className="mb-3"
                 onChange={this.onChange}
-              />{" "}
-              <Label for="password"> Password </Label>{" "}
+              />
+              <Label for="password"> Password </Label>
               <Input
                 type="password"
                 name="password"
@@ -126,8 +126,8 @@ class RegisterModal extends Component {
                 placeholder="Enter Password."
                 className="mb-3"
                 onChange={this.onChange}
-              />{" "}
-              <Label for="cpassword"> Confrim Password </Label>{" "}
+              />
+              <Label for="cpassword"> Confrim Password </Label>
               <Input
                 type="password"
                 name="cpassword"
@@ -135,7 +135,7 @@ class RegisterModal extends Component {
                 placeholder="Re-Enter Password."
                 className="mb-3"
                 onChange={this.onChange}
-              />{" "}
+              />
               <Button
                 type="submit"
                 style={{
@@ -143,11 +143,11 @@ class RegisterModal extends Component {
                   float: "right"
                 }}
               >
-                Sign Up{" "}
-              </Button>{" "}
-            </Form>{" "}
-          </ModalBody>{" "}
-        </Modal>{" "}
+                Sign Up
+              </Button>
+            </Form>
+          </ModalBody>
+        </Modal>
       </div>
     );
   }

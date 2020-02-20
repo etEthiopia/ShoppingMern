@@ -87,17 +87,17 @@ class LoginModal extends Component {
     return (
       <div>
         <NavLink onClick={this.toggle} href="#">
-          Login{" "}
-        </NavLink>{" "}
+          Login
+        </NavLink>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}> Login </ModalHeader>{" "}
+          <ModalHeader toggle={this.toggle}> Login </ModalHeader>
           <ModalBody>
-            {" "}
+            
             {this.state.message ? (
               <Alert color="danger"> {this.state.message} </Alert>
-            ) : null}{" "}
+            ) : null}
             <Form onSubmit={this.onSubmit}>
-              <Label for="email"> Email </Label>{" "}
+              <Label for="email"> Email </Label>
               <Input
                 type="email"
                 name="email"
@@ -105,8 +105,8 @@ class LoginModal extends Component {
                 placeholder="Enter Email Address."
                 className="mb-3"
                 onChange={this.onChange}
-              />{" "}
-              <Label for="password"> Password </Label>{" "}
+              />
+              <Label for="password"> Password </Label>
               <Input
                 type="password"
                 name="password"
@@ -114,7 +114,7 @@ class LoginModal extends Component {
                 placeholder="Enter Password."
                 className="mb-3"
                 onChange={this.onChange}
-              />{" "}
+              />
               <Button
                 type="submit"
                 style={{
@@ -122,11 +122,11 @@ class LoginModal extends Component {
                   float: "right"
                 }}
               >
-                Sign In{" "}
-              </Button>{" "}
-            </Form>{" "}
-          </ModalBody>{" "}
-        </Modal>{" "}
+                Sign In
+              </Button>
+            </Form>
+          </ModalBody>
+        </Modal>
       </div>
     );
   }
