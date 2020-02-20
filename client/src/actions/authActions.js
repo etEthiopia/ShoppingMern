@@ -13,9 +13,7 @@ import {
 import {
     returnErrors
 } from './errorActions';
-import {
-    config
-} from 'react-transition-group';
+
 
 // Check token and load user
 
@@ -50,7 +48,7 @@ export const tokenConfig = getState => {
 
     // // Get token from localstorage
     const token = getState().auth.token;
-    console.log("TOKEN " + token)
+    
     if (token) {
         config.headers['xauthtoken'] = token;
     }

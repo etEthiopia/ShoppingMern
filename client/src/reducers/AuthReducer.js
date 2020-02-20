@@ -17,6 +17,7 @@ const initialState = {
 }
 
 export default function (state = initialState, action) {
+    
     switch (action.type) {
         case USER_LOADING:
             return {
@@ -24,6 +25,7 @@ export default function (state = initialState, action) {
                 isLoading: true
             };
         case USER_LOADED:
+            
             return {
                 ...state,
                 isAuthenticated: true,

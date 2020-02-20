@@ -7,13 +7,12 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   Container
 } from "reactstrap";
 import RegisterModal from "./auth/RegisterModal";
 import LoginModal from "./auth/LoginModal";
 import Logout from "./auth/Logout";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 class AppNavbar extends Component {
@@ -31,11 +30,15 @@ class AppNavbar extends Component {
   };
 
   render() {
-    const { isAutheticated, user } = this.props.auth;
+    const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
       <Fragment>
-        {" "}
+        <NavItem>
+          <span className="navbar-text mr-3">
+            <strong> {user ? `Welcome ${user.name}` : ""} </strong>{" "}
+          </span>{" "}
+        </NavItem>{" "}
         <NavItem>
           <Logout />
         </NavItem>{" "}
@@ -45,10 +48,10 @@ class AppNavbar extends Component {
       <Fragment>
         <NavItem>
           <RegisterModal />
-        </NavItem>
+        </NavItem>{" "}
         <NavItem>
           <LoginModal />
-        </NavItem>
+        </NavItem>{" "}
       </Fragment>
     );
 
@@ -56,12 +59,13 @@ class AppNavbar extends Component {
       <div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
           <Container>
-            <NavbarBrand href="/"> Shopping </NavbarBrand>{" "}
+            <NavbarBrand href="/">Shopping</NavbarBrand>{" "}
             <NavbarToggler onClick={this.toggle} />{" "}
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                {isAutheticated? authLinks:guestLinks}
-                </Nav>{" "}
+                {" "}
+                {isAuthenticated ? authLinks : guestLinks}{" "}
+              </Nav>{" "}
             </Collapse>{" "}
           </Container>{" "}
         </Navbar>{" "}

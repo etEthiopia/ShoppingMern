@@ -12,7 +12,7 @@ class ShoppingList extends Component {
   }
 
   onDelete = id => {
-    console.log(id + " Delete");
+    
     this.props.deleteItem(id);
   };
 

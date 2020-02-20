@@ -8,7 +8,7 @@ function auth(req, res, next) {
 
     // Check for token
     if (!token) {
-        console.log("NO TOKEN ")
+        
         return res.status(401).json({
             success: false,
             message: 'No Token, Unauthorized Access'

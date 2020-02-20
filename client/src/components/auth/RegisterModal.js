@@ -68,7 +68,7 @@ class RegisterModal extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    if (this.state.cpassword == this.state.password) {
+    if (this.state.cpassword === this.state.password) {
       const newUser = {
         name: this.state.name,
         email: this.state.email,
