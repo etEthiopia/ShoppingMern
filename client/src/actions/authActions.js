@@ -42,14 +42,17 @@ export const loadUser = () => (dispatch, getState) => {
 // Setup Config
 export const tokenConfig = getState => {
     const config = {
-        'xauthtoken': null
+        headers: {
+            'Content-type': 'application/json'
+        }
+
     }
 
     // // Get token from localstorage
     const token = getState().auth.token;
     console.log("TOKEN " + token)
     if (token) {
-        config.xauthtoken = token;
+        config.headers['xauthtoken'] = token;
     }
 
     return config;
@@ -75,13 +78,21 @@ export const register = (user) => dispatch => {
 
 // Login User
 export const login = (user) => dispatch => {
-    axios.post('/auth', user)
+
+    // Headers
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    axios.post('/auth', user, config)
         .then(res => dispatch({
             type: LOGIN_SUCCESS,
             payload: res.data
         }))
         .catch(err => {
-            dispatch(returnErrors(err.response.data, err.response.status, 'LOGIN_SUCCESS'));
+            dispatch(returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL'));
             dispatch({
                 type: LOGIN_FAIL
             })
