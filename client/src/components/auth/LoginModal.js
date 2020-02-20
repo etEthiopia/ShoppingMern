@@ -72,7 +72,7 @@ class LoginModal extends Component {
         password: this.state.password
       };
 
-      // Attempt to register
+      // Attempt to login
       this.props.login(newUser);
     } else {
       this.setState({

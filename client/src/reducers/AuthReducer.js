@@ -39,10 +39,10 @@ export default function (state = initialState, action) {
                     isAuthenticated: true,
                     isLoading: false
             };
+        case AUTH_ERROR:
         case LOGIN_FAIL:
-        case REGISTER_FAIL:
         case LOGOUT_SUCCESS:
-        case LOGIN_SUCCESS:
+        case REGISTER_FAIL:
             localStorage.removeItem('shopingtoken');
             return {
                 ...state,

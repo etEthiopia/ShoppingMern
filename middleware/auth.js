@@ -2,7 +2,9 @@ const config = require('config');
 const jwt = require('jsonwebtoken');
 
 function auth(req, res, next) {
-    const token = req.body.xauthtoken;
+    //console.log(req);
+    const token = req.header('xauthtoken');
+    
 
     // Check for token
     if (!token) {

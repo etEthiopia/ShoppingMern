@@ -45,13 +45,16 @@ export const tokenConfig = getState => {
         'xauthtoken': null
     }
 
-    // Get token from localstorage
+    // // Get token from localstorage
     const token = getState().auth.token;
+    console.log("TOKEN " + token)
     if (token) {
         config.xauthtoken = token;
     }
 
     return config;
+
+
 }
 
 // Register User
@@ -78,7 +81,7 @@ export const login = (user) => dispatch => {
             payload: res.data
         }))
         .catch(err => {
-            dispatch(returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL'));
+            dispatch(returnErrors(err.response.data, err.response.status, 'LOGIN_SUCCESS'));
             dispatch({
                 type: LOGIN_FAIL
             })

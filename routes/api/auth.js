@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
                                     id: user.id
                                 },
                                 config.get('JWTSECRET'), {
-                                    expiresIn: 3600
+                                    expiresIn: "1d"
                                 },
                                 (err, token) => {
                                     if (err) {
