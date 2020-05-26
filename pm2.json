@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "Server",
+      "script": "./server.js",
+      // "exec_mode": "cluster",
+      // "instances": 2,
+      "node_args": "--max_old_space_size=8192"
+    },
+    {
+      "name": "Client",
+      "script": "./client/src/index.js",
+      "node_args": "--max_old_space_size=8192"
+    }
+  ]
+}
