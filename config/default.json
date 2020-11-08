@@ -1,4 +1,3 @@
-{   "DB_CONNECTION":   "mongodb+srv://root:Sew!#7xKVe9jjey@cluster0-jkw5c.mongodb.net/test?retryWrites=true&w=majority",
-    //"DB_CONNECTION" : "mongodb://localhost/ShoppingDB",
+{   "DB_CONNECTION" : "mongodb://localhost/ShoppingDB",
     "JWTSECRET" : "shoppingJwtSecret"
 }
